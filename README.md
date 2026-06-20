@@ -21,7 +21,6 @@
 | 构建系统 | CMake | 3.20+ |
 | 开发IDE | Qt Creator | 官方最新版 |
 | 2D渲染 | Qt Graphics View Framework | - |
-| 3D渲染 | Qt 3D / OpenGL | - |
 | 音频系统 | Qt Multimedia | - |
 | 数据存储 | 加密 JSON + QSettings | - |
 | UI框架 | Qt Widgets / Qt Quick QML | - |

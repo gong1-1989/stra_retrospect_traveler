@@ -6,7 +6,7 @@
 #==================================
 #-----------------------------------
 # Cmake最低版本要求
-# 使用3.0版本是因为需要一些现代Cmake特性
+# 使用3.20版本是因为需要一些现代Cmake特性
 # 比如target_link_libraries的 PUBLIC/PRIVATE/INTERFACE
 #-----------------------------------
 cmake_minimum_required(VERSION 3.20)
@@ -17,10 +17,9 @@ cmake_minimum_required(VERSION 3.20)
 # 参数说明
 #  -项目名称：star_retrospect_traveler
 #  -VERSION：醒项目版本号（主版本.次版本.补丁版本）
-#  -DESCRIPTION：项目描述
 #  -LANGUAGES：使用的编程语言（CXX=C++）
 #-----------------------------------
-project(star_retrospect_traveler VERSION 0.1.0 DESCRIPTION "星塑旅人 - 探索策略RPG" LANGUAGES CXX)
+project(star_retrospect_traveler VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -33,11 +32,11 @@ set(CMAKE_AUTORCC ON)
 # 设置C++标准
 # CMAKE_CXX_STANDARD：指定C++标准版本
 # CMAKE_CXX_STANDARD_REQUIRED：强制要求编译器支持该标准
-# CMAKE_CXX_EXTENSION：禁用编译器扩展，保证代码可移植性
+# CMAKE_CXX_EXTENSIONS：禁用编译器扩展，保证代码可移植性
 #-----------------------------------
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-#set(CMAKE_CXX_EXTENSION OFF)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
     Widgets
@@ -59,8 +58,9 @@ set(TS_FILES star_retrospect_traveler_zh_CN.ts)
 
 set(PROJECT_SOURCES
         main.cpp
-
-
+        gamewindow.h
+        gamewindow.cpp
+        gamewindow.ui
         ${TS_FILES}
 )
 
@@ -68,18 +68,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(star_retrospect_traveler
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        gameengine.h gameengine.cpp
-        gameconfig.h gameconfig.cpp
-        scenemanager.h scenemanager.cpp
-        resourcemanager.h resourcemanager.cpp
-        inputmanager.h inputmanager.cpp
-        audiomanager.h audiomanager.cpp
-        pluginmanager.h pluginmanager.cpp
-        audiomanager.cpp audiomanager.h EcosystemSystem.cpp EcosystemSystem.h ExampleScene.cpp ExampleScene.h gameconfig.cpp gameconfig.h GameConstants.h gameengine.cpp gameengine.h GameManager.cpp GameManager.h inputmanager.cpp inputmanager.h Player.cpp Player.h pluginmanager.cpp pluginmanager.h README.md RenderManager.cpp RenderManager.h ResonanceSystem.cpp ResonanceSystem.h resourcemanager.cpp resourcemanager.h scenemanager.cpp scenemanager.h TimeSystem.cpp TimeSystem.h UIManager.cpp UIManager.h
         docs/development_guide.md docs/mingw_build_guide.md docs/phase1_development_guide.md
         resources.qrc
         docs/plugin_development_guide.md
         docs/star_retrospect_traveler.pdf
+        gameloop.h gameloop.cpp
+        basescene.h basescene.cpp
+        scenemanager.h scenemanager.cpp
+        resourcemanager.h resourcemanager.cpp
+        inputmanager.h inputmanager.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET star_retrospect_traveler APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
