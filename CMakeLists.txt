@@ -75,6 +75,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         inputmanager.h inputmanager.cpp
         audiomanager.h audiomanager.cpp
         pluginmanager.h pluginmanager.cpp
+        audiomanager.cpp audiomanager.h EcosystemSystem.cpp EcosystemSystem.h ExampleScene.cpp ExampleScene.h gameconfig.cpp gameconfig.h GameConstants.h gameengine.cpp gameengine.h GameManager.cpp GameManager.h inputmanager.cpp inputmanager.h Player.cpp Player.h pluginmanager.cpp pluginmanager.h README.md RenderManager.cpp RenderManager.h ResonanceSystem.cpp ResonanceSystem.h resourcemanager.cpp resourcemanager.h scenemanager.cpp scenemanager.h TimeSystem.cpp TimeSystem.h UIManager.cpp UIManager.h
+        docs/development_guide.md docs/mingw_build_guide.md docs/phase1_development_guide.md
+        resources.qrc
+        docs/plugin_development_guide.md
+        docs/star_retrospect_traveler.pdf
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET star_retrospect_traveler APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

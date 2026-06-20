@@ -1,0 +1,20 @@
+{
+    "id": "com.example.gameplay",
+    "name": "示例玩法插件",
+    "version": "1.0.0",
+    "author": "星溯旅人开发团队",
+    "description": "示例玩法插件，演示游戏玩法插件的开发方法。",
+    "website": "https://example.com",
+    "email": "contact@example.com",
+    "license": "MIT",
+    "type": "gameplay",
+    "category": "示例",
+    "enabled": true,
+    "priority": 10,
+    "autoLoad": true,
+    "icon": "icon.png",
+    "tags": ["gameplay", "example"],
+    "dependencies": [],
+    "minEngineVersion": "0.1.0",
+    "maxEngineVersion": "1.0.0"
+}

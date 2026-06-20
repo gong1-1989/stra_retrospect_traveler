@@ -1,0 +1,17 @@
+{
+    "name": "TimeRiftContent",
+    "version": "1.2.0",
+    "author": "星溯旅人开发团队",
+    "description": "时空裂隙内容扩展包：添加新场景、新角色、新物品",
+    "type": "content",
+    "category": "内容扩展",
+    "website": "https://starretrospect.com",
+    "dependencies": [],
+    "tags": ["内容", "场景", "角色", "物品", "时空"],
+    "content_summary": {
+        "scenes": 3,
+        "characters": 2,
+        "items": 4,
+        "quests": 0
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id": "com.example.ui",
+    "name": "示例UI插件",
+    "version": "1.0.0",
+    "author": "星溯旅人开发团队",
+    "description": "示例UI插件，演示UI内容插件的开发方法。",
+    "website": "https://example.com",
+    "email": "contact@example.com",
+    "license": "MIT",
+    "type": "ui",
+    "category": "示例",
+    "enabled": true,
+    "priority": 20,
+    "autoLoad": true,
+    "icon": "icon.png",
+    "tags": ["ui", "example"],
+    "dependencies": [],
+    "minEngineVersion": "0.1.0",
+    "maxEngineVersion": "1.0.0"
+}

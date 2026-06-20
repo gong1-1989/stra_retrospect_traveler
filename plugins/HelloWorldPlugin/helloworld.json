@@ -1,0 +1,11 @@
+{
+    "name": "HelloWorldPlugin",
+    "version": "1.0.0",
+    "author": "星溯旅人开发团队",
+    "description": "一个简单的 HelloWorld 示例插件，用于学习和测试插件系统",
+    "type": "example",
+    "category": "示例",
+    "website": "https://starretrospect.com",
+    "dependencies": [],
+    "tags": ["示例", "测试", "入门"]
+}

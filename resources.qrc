@@ -1,0 +1,13 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>assets/images/player.png</file>
+        <file>assets/images/background.png</file>
+        <file>assets/images/ui/button.png</file>
+        <file>assets/audio/bgm/main_theme.mp3</file>
+        <file>assets/audio/sfx/click.wav</file>
+        <file>assets/fonts/main_font.ttf</file>
+        <file>assets/config/game.json</file>
+    </qresource>
+</RCC>
+
