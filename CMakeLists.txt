@@ -68,10 +68,19 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(star_retrospect_traveler
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        docs/development_guide.md docs/mingw_build_guide.md docs/phase1_development_guide.md
-        resources.qrc
-        docs/plugin_development_guide.md
+        docs/config_resource_doc.html
+        docs/config_resource_doc.xml
+        docs/dev_guide_doc.html
+        docs/dev_guide_doc.xml
+        docs/game_design_doc.html
+        docs/game_design_doc.xml
+        docs/project_ops_doc.html
+        docs/project_ops_doc.xml
+        docs/tech_arch_doc.html
+        docs/tech_arch_doc.xml
+        docs/README.md
         docs/star_retrospect_traveler.pdf
+        resources.qrc
         gameloop.h gameloop.cpp
         basescene.h basescene.cpp
         scenemanager.h scenemanager.cpp
