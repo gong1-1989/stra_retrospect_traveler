@@ -1,52 +1,15 @@
-#==================================
-# 星塑旅人 - 主Cmake配置文件
-# 项目名称：星塑旅人 Star Retrospect Traveler
-# 版本：0.1.0
-# 作者：云中的鱼
-#==================================
-#-----------------------------------
-# Cmake最低版本要求
-# 使用3.20版本是因为需要一些现代Cmake特性
-# 比如target_link_libraries的 PUBLIC/PRIVATE/INTERFACE
-#-----------------------------------
-cmake_minimum_required(VERSION 3.20)
 
-#-----------------------------------
-# 项目定义
-# prihect()命令用于定义项目的基本信息
-# 参数说明
-#  -项目名称：star_retrospect_traveler
-#  -VERSION：醒项目版本号（主版本.次版本.补丁版本）
-#  -LANGUAGES：使用的编程语言（CXX=C++）
-#-----------------------------------
+cmake_minimum_required(VERSION 3.16)
+
 project(star_retrospect_traveler VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-#===================================
-# C++标准配置
-#===================================
-#-----------------------------------
-# 设置C++标准
-# CMAKE_CXX_STANDARD：指定C++标准版本
-# CMAKE_CXX_STANDARD_REQUIRED：强制要求编译器支持该标准
-# CMAKE_CXX_EXTENSIONS：禁用编译器扩展，保证代码可移植性
-#-----------------------------------
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-if(MSVC)
-    add_compile_options(/W4 /permissive-)
-elseif(MINGW)
-    add_compile_options(-Wall -Wextra -Wpedantic)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--large-address-aware")
-else()
-    add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
     Widgets
@@ -97,8 +60,45 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         scenemanager.h scenemanager.cpp
         resourcemanager.h resourcemanager.cpp
         inputmanager.h inputmanager.cpp
-        src/gameengine.h src/gameengine.cpp
+        src/core/gameengine.h src/core/gameengine.cpp
         docs/No1.pdf docs/No2.pdf docs/No3.pdf docs/No4.pdf
+
+        src/core/scenemanager.h src/core/scenemanager.cpp
+        src/core/resourcemanager.h src/core/resourcemanager.cpp
+        src/core/inputmanager.h src/core/inputmanager.cpp
+        src/core/audiomanager.h src/core/audiomanager.cpp
+
+
+
+
+
+
+        src/game/player.h src/game/player.cpp
+        src/game/enemy.h src/game/enemy.cpp
+        src/game/timesystem.h src/game/timesystem.cpp
+        src/game/resonancesystem.h src/game/resonancesystem.cpp
+        src/game/ecosystemsystem.h src/game/ecosystemsystem.cpp
+        src/game/combatsystem.h src/game/combatsystem.cpp
+        src/game/skillsystem.h src/game/skillsystem.cpp
+        src/game/aisystem.h src/game/aisystem.cpp
+        src/game/inventorysystem.h src/game/inventorysystem.cpp
+        src/game/questsystem.h src/game/questsystem.cpp
+        src/core/gameconfig.h src/core/gameconfig.cpp
+        src/core/savesystem.h src/core/savesystem.cpp
+        src/core/pluginmanager.h src/core/pluginmanager.cpp
+        src/core/eventmanager.h src/core/eventmanager.cpp
+        src/render/rendermanager.h src/render/rendermanager.cpp
+        src/render/camerasystem.h src/render/camerasystem.cpp
+        src/render/particlesystem.h src/render/particlesystem.cpp
+        src/render/spriteanimation.h src/render/spriteanimation.cpp
+        src/render/tilemap.h src/render/tilemap.cpp
+        src/ui/uimanager.h src/ui/uimanager.cpp
+        src/ui/mainmenu.h src/ui/mainmenu.cpp src/ui/mainmenu.ui
+        src/ui/settingsdialog.h src/ui/settingsdialog.cpp src/ui/settingsdialog.ui
+        src/ui/inventorypanel.h src/ui/inventorypanel.cpp src/ui/inventorypanel.ui
+        src/ui/dialogbox.h src/ui/dialogbox.cpp src/ui/dialogbox.ui
+        src/ui/talentpanel.h src/ui/talentpanel.cpp
+        src/ui/starmappanel.h src/ui/starmappanel.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET star_retrospect_traveler APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -133,15 +133,7 @@ target_link_libraries(star_retrospect_traveler PRIVATE
     Qt${QT_VERSION_MAJOR}::Svg
 )
 
-# 包含目录
-target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/core
-    ${CMAKE_SOURCE_DIR}/src/game
-    ${CMAKE_SOURCE_DIR}/src/render
-    ${CMAKE_SOURCE_DIR}/src/ui
-    ${CMAKE_BINARY_DIR}
-)
+
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
@@ -166,3 +158,4 @@ install(TARGETS star_retrospect_traveler
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(star_retrospect_traveler)
 endif()
+add_subdirectory(modules/CoreModule)
