@@ -38,6 +38,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+if(MSVC)
+    add_compile_options(/W4 /permissive-)
+elseif(MINGW)
+    add_compile_options(-Wall -Wextra -Wpedantic)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--large-address-aware")
+else()
+    add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
     Widgets
     LinguistTools   
@@ -52,6 +62,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
     Quick
     Qml
     Svg
+    Test
 )
 
 set(TS_FILES star_retrospect_traveler_zh_CN.ts)
@@ -86,7 +97,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         scenemanager.h scenemanager.cpp
         resourcemanager.h resourcemanager.cpp
         inputmanager.h inputmanager.cpp
-
+        src/gameengine.h src/gameengine.cpp
+        docs/No1.pdf docs/No2.pdf docs/No3.pdf docs/No4.pdf
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET star_retrospect_traveler APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -121,6 +133,15 @@ target_link_libraries(star_retrospect_traveler PRIVATE
     Qt${QT_VERSION_MAJOR}::Svg
 )
 
+# 包含目录
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/core
+    ${CMAKE_SOURCE_DIR}/src/game
+    ${CMAKE_SOURCE_DIR}/src/render
+    ${CMAKE_SOURCE_DIR}/src/ui
+    ${CMAKE_BINARY_DIR}
+)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.

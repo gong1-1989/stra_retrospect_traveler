@@ -1,13 +1,24 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-    <qresource prefix="/">
-        <file>assets/images/player.png</file>
-        <file>assets/images/background.png</file>
-        <file>assets/images/ui/button.png</file>
-        <file>assets/audio/bgm/main_theme.mp3</file>
-        <file>assets/audio/sfx/click.wav</file>
-        <file>assets/fonts/main_font.ttf</file>
-        <file>assets/config/game.json</file>
+<RCC>
+    <qresource prefix="/images">
+        <file>resources/images/background.png</file>
+        <file>resources/images/player.png</file>
+    </qresource>
+    <qresource prefix="/audio">
+        <file>resources/audio/bgm/main_theme.mp3</file>
+        <file>resources/audio/sfx/click.wav</file>
+    </qresource>
+    <qresource prefix="/fonts ">
+        <file>resources/fonts/main_font.ttf</file>
+    </qresource>
+    <qresource prefix="/ui">
+        <file>resources/ui/button.png</file>
+    </qresource>
+    <qresource prefix="/config">
+        <file>resources/config/game.json</file>
+        <file>resources/config/characters.json</file>
+        <file>resources/config/enemies.json</file>
+        <file>resources/config/items.json</file>
+        <file>resources/config/levels.json</file>
+        <file>resources/config/starcore.json</file>
     </qresource>
 </RCC>
-

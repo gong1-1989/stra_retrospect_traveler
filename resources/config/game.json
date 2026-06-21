@@ -1,0 +1,64 @@
+{
+    "version": "1.0.0",
+    "graphics": {
+        "window_width": 1280,
+        "window_height": 720,
+        "fullscreen": false,
+        "vsync": true,
+        "frame_rate_limit": 60,
+        "texture_quality": "high",
+        "particle_quality": "high",
+        "brightness": 1.0,
+        "contrast": 1.0,
+        "saturation": 1.0
+    },
+    "audio": {
+        "master_volume": 0.8,
+        "music_volume": 0.6,
+        "sfx_volume": 0.7,
+        "voice_volume": 0.8,
+        "ambient_volume": 0.5,
+        "mute_all": false,
+        "mute_music": false,
+        "mute_sfx": false
+    },
+    "controls": {
+        "keyboard": {
+            "move_up": "W",
+            "move_down": "S",
+            "move_left": "A",
+            "move_right": "D",
+            "interact": "E",
+            "attack": "MouseLeft",
+            "skill_1": "1",
+            "skill_2": "2",
+            "skill_3": "3",
+            "skill_4": "4",
+            "inventory": "I",
+            "talent": "K",
+            "map": "M",
+            "pause": "Escape",
+            "time_rewind": "Q",
+            "time_slow": "R"
+        },
+        "mouse_sensitivity": 1.0,
+        "invert_mouse_y": false
+    },
+    "gameplay": {
+        "difficulty": "normal",
+        "auto_save": true,
+        "auto_save_interval": 300,
+        "show_fps": false,
+        "show_minimap": true,
+        "show_quest_tracker": true,
+        "subtitles": true,
+        "language": "zh_CN"
+    },
+    "ui": {
+        "theme": "default",
+        "ui_scale": 1.0,
+        "font_size": "medium",
+        "show_tooltips": true,
+        "tooltip_delay": 0.5
+    }
+}

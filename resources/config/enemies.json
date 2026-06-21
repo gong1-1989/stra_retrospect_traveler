@@ -1,0 +1,82 @@
+{
+    "version": "1.0.0",
+    "normal_enemies": [
+        {
+            "id": "enemy_slime",
+            "name": "星尘史莱姆",
+            "type": "normal",
+            "element": "neutral",
+            "base_stats": {
+                "max_health": 30,
+                "attack": 5,
+                "defense": 2,
+                "speed": 2.0,
+                "exp_reward": 10,
+                "gold_reward": 5
+            },
+            "ai_behavior": "passive",
+            "skills": ["basic_attack"],
+            "drop_table": [
+                {"item_id": "slime_gel", "chance": 0.5},
+                {"item_id": "gold_coin", "chance": 1.0, "amount": "1-5"}
+            ],
+            "sprite": "enemies/slime.png",
+            "description": "由星尘凝聚而成的低阶生物"
+        },
+        {
+            "id": "enemy_wolf",
+            "name": "暗影狼",
+            "type": "normal",
+            "element": "dark",
+            "base_stats": {
+                "max_health": 50,
+                "attack": 12,
+                "defense": 4,
+                "speed": 5.0,
+                "exp_reward": 25,
+                "gold_reward": 15
+            },
+            "ai_behavior": "aggressive",
+            "skills": ["basic_attack", "bite"],
+            "detection_range": 300,
+            "drop_table": [
+                {"item_id": "wolf_fang", "chance": 0.3},
+                {"item_id": "wolf_pelt", "chance": 0.2}
+            ],
+            "sprite": "enemies/wolf.png",
+            "description": "生活在暗影森林的凶猛野兽"
+        }
+    ],
+    "boss_enemies": [
+        {
+            "id": "boss_time_guardian",
+            "name": "时间守护者",
+            "type": "boss",
+            "element": "time",
+            "base_stats": {
+                "max_health": 500,
+                "attack": 25,
+                "defense": 15,
+                "speed": 3.0,
+                "exp_reward": 500,
+                "gold_reward": 200
+            },
+            "ai_behavior": "boss_phase",
+            "phases": [
+                {"health_threshold": 1.0, "skills": ["basic_attack", "time_slow"]},
+                {"health_threshold": 0.5, "skills": ["basic_attack", "time_slow", "time_stop"]}
+            ],
+            "drop_table": [
+                {"item_id": "time_crystal", "chance": 1.0},
+                {"item_id": "rare_equipment_box", "chance": 0.3}
+            ],
+            "sprite": "enemies/boss_time_guardian.png",
+            "description": "守护时间褶皱的强大存在"
+        }
+    ],
+    "ai_behaviors": {
+        "passive": "不会主动攻击，受到攻击后反击",
+        "aggressive": "发现玩家后主动追击攻击",
+        "boss_phase": "多阶段Boss AI，根据血量切换技能"
+    }
+}

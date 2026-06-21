@@ -1,0 +1,56 @@
+{
+    "version": "1.0.0",
+    "player": {
+        "base_stats": {
+            "max_health": 100,
+            "max_mana": 50,
+            "attack": 10,
+            "defense": 5,
+            "speed": 5.0,
+            "crit_rate": 0.05,
+            "crit_damage": 1.5
+        },
+        "growth_rates": {
+            "health_per_level": 15,
+            "mana_per_level": 8,
+            "attack_per_level": 2,
+            "defense_per_level": 1,
+            "speed_per_level": 0.2
+        },
+        "starting_position": {
+            "x": 0,
+            "y": 0
+        },
+        "starting_equipment": {
+            "weapon": "starter_sword",
+            "armor": "starter_clothes",
+            "accessory": null
+        },
+        "starting_skills": ["basic_attack", "dash"]
+    },
+    "companions": [
+        {
+            "id": "companion_001",
+            "name": "星灵·小萤",
+            "type": "support",
+            "base_stats": {
+                "max_health": 60,
+                "attack": 5,
+                "defense": 3,
+                "speed": 6.0
+            },
+            "abilities": ["heal", "shield"],
+            "unlock_condition": "quest_unlock_001",
+            "description": "来自星核的小精灵，擅长治疗和辅助"
+        }
+    ],
+    "npc_templates": [
+        {
+            "id": "npc_merchant",
+            "name": "旅行商人",
+            "type": "merchant",
+            "dialogue_tree": "merchant_default",
+            "shop_inventory": ["potion_hp", "potion_mp", "sword_iron"]
+        }
+    ]
+}

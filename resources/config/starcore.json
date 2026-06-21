@@ -1,0 +1,63 @@
+{
+    "version": "1.0.0",
+    "starcore_types": [
+        {
+            "id": "starcore_time",
+            "name": "时间星核",
+            "element": "time",
+            "color": "#00FFFF",
+            "description": "掌控时间之力的星核",
+            "max_resonance_level": 10,
+            "base_stats": {
+                "mana_bonus": 20,
+                "speed_bonus": 0.5
+            },
+            "abilities": [
+                {"level": 1, "ability_id": "time_slow", "name": "时间减速", "description": "减缓周围时间流速"},
+                {"level": 3, "ability_id": "time_rewind", "name": "时间倒流", "description": "短时间内回溯状态"},
+                {"level": 5, "ability_id": "time_stop", "name": "时间停止", "description": "完全停止周围时间"},
+                {"level": 10, "ability_id": "time_paradox", "name": "时间悖论", "description": "召唤时间克隆体协同作战"}
+            ],
+            "unlock_condition": "story_progress_3"
+        },
+        {
+            "id": "starcore_fire",
+            "name": "火焰星核",
+            "element": "fire",
+            "color": "#FF4500",
+            "description": "掌控火焰之力的星核",
+            "max_resonance_level": 10,
+            "base_stats": {
+                "attack_bonus": 10,
+                "crit_rate_bonus": 0.05
+            },
+            "abilities": [
+                {"level": 1, "ability_id": "fireball", "name": "火球术", "description": "发射火球攻击敌人"},
+                {"level": 3, "ability_id": "fire_shield", "name": "火焰护盾", "description": "火焰护盾保护自身"},
+                {"level": 5, "ability_id": "meteor", "name": "陨石坠落", "description": "召唤陨石轰炸区域"},
+                {"level": 10, "ability_id": "inferno", "name": "地狱业火", "description": "释放毁灭性的火焰风暴"}
+            ],
+            "unlock_condition": "boss_fire_defeated"
+        }
+    ],
+    "resonance_mechanics": {
+        "exp_per_level": [0, 100, 250, 450, 700, 1000, 1400, 1900, 2500, 3200, 4000],
+        "backlash_risk": {
+            "level_1_3": 0.05,
+            "level_4_6": 0.1,
+            "level_7_9": 0.15,
+            "level_10": 0.2
+        },
+        "backlash_effects": [
+            {"type": "mana_drain", "description": "反噬消耗额外法力"},
+            {"type": "cooldown_increase", "description": "反噬增加技能冷却"},
+            {"type": "health_cost", "description": "反噬消耗生命值"}
+        ]
+    },
+    "personality_dialogues": {
+        "starcore_time": [
+            {"mood": "friendly", "text": "时间如流水，我们都是旅人..."},
+            {"mood": "serious", "text": "滥用时间之力，会招致悖论的惩罚。"}
+        ]
+    }
+}

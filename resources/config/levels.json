@@ -1,0 +1,79 @@
+{
+    "version": "1.0.0",
+    "planets": [
+        {
+            "id": "planet_start",
+            "name": "起源星",
+            "description": "玩家的起始星球，宁静而美丽",
+            "level_requirement": 1,
+            "unlocked": true,
+            "regions": [
+                {
+                    "id": "region_village",
+                    "name": "星之村",
+                    "type": "town",
+                    "description": "宁静的小村庄，玩家的出生地",
+                    "tile_map": "maps/village.tmx",
+                    "enemies": [],
+                    "npcs": ["npc_elder", "npc_merchant"],
+                    "quests": ["quest_intro", "quest_first_dungeon"],
+                    "collectibles": []
+                },
+                {
+                    "id": "region_forest",
+                    "name": "星尘森林",
+                    "type": "field",
+                    "description": "充满星尘的神秘森林",
+                    "tile_map": "maps/forest.tmx",
+                    "enemies": ["enemy_slime", "enemy_wolf"],
+                    "enemy_spawn_rate": 0.02,
+                    "npcs": [],
+                    "quests": ["quest_forest_explore"],
+                    "collectibles": [
+                        {"id": "collect_star_fragment_01", "type": "star_fragment", "x": 500, "y": 300}
+                    ],
+                    "boss_spawn": null
+                }
+            ],
+            "dungeons": [
+                {
+                    "id": "dungeon_time_cave",
+                    "name": "时间洞穴",
+                    "type": "dungeon",
+                    "description": "时间褶皱形成的神秘洞穴",
+                    "level_requirement": 5,
+                    "floors": 3,
+                    "boss": "boss_time_guardian",
+                    "rewards": {
+                        "exp": 200,
+                        "gold": 100,
+                        "items": ["time_crystal"]
+                    }
+                }
+            ]
+        }
+    ],
+    "quests": [
+        {
+            "id": "quest_intro",
+            "name": "初入星渊",
+            "type": "main",
+            "description": "与村长对话，了解这个世界",
+            "giver": "npc_elder",
+            "objectives": [
+                {"type": "talk", "target": "npc_elder", "description": "与村长对话"}
+            ],
+            "rewards": {
+                "exp": 50,
+                "gold": 30,
+                "items": ["starter_sword", "starter_clothes"]
+            },
+            "next_quest": "quest_first_dungeon"
+        }
+    ],
+    "collectible_types": {
+        "star_fragment": "星之碎片",
+        "chest": "宝箱",
+        "lore": "故事典籍"
+    }
+}

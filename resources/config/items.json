@@ -1,0 +1,88 @@
+{
+    "version": "1.0.0",
+    "weapons": [
+        {
+            "id": "starter_sword",
+            "name": "初始短剑",
+            "type": "sword",
+            "rarity": "common",
+            "stats": {
+                "attack": 5,
+                "attack_speed": 1.0
+            },
+            "description": "新手使用的普通短剑",
+            "icon": "items/weapons/starter_sword.png",
+            "price": 50,
+            "level_requirement": 1
+        }
+    ],
+    "armors": [
+        {
+            "id": "starter_clothes",
+            "name": "新手布衣",
+            "type": "armor",
+            "rarity": "common",
+            "stats": {
+                "defense": 2,
+                "max_health": 10
+            },
+            "description": "普通的布衣，提供基础防护",
+            "icon": "items/armors/starter_clothes.png",
+            "price": 30,
+            "level_requirement": 1
+        }
+    ],
+    "accessories": [
+        {
+            "id": "ring_luck",
+            "name": "幸运戒指",
+            "type": "ring",
+            "rarity": "rare",
+            "stats": {
+                "crit_rate": 0.05,
+                "gold_bonus": 0.1
+            },
+            "description": "能带来好运的神秘戒指",
+            "icon": "items/accessories/ring_luck.png",
+            "price": 500,
+            "level_requirement": 10
+        }
+    ],
+    "consumables": [
+        {
+            "id": "potion_hp_small",
+            "name": "小型生命药水",
+            "type": "potion",
+            "rarity": "common",
+            "effect": {
+                "type": "heal",
+                "value": 30
+            },
+            "description": "恢复30点生命值",
+            "icon": "items/consumables/potion_hp_small.png",
+            "price": 20,
+            "stackable": true,
+            "max_stack": 99
+        }
+    ],
+    "materials": [
+        {
+            "id": "slime_gel",
+            "name": "史莱姆凝胶",
+            "type": "material",
+            "rarity": "common",
+            "description": "史莱姆掉落的凝胶，可用于合成",
+            "icon": "items/materials/slime_gel.png",
+            "price": 2,
+            "stackable": true,
+            "max_stack": 999
+        }
+    ],
+    "rarity_levels": {
+        "common": {"color": "#FFFFFF", "name": "普通"},
+        "uncommon": {"color": "#1EFF00", "name": "优秀"},
+        "rare": {"color": "#0070DD", "name": "稀有"},
+        "epic": {"color": "#A335EE", "name": "史诗"},
+        "legendary": {"color": "#FF8000", "name": "传说"}
+    }
+}
