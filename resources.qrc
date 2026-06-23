@@ -21,4 +21,8 @@
         <file>resources/config/levels.json</file>
         <file>resources/config/starcore.json</file>
     </qresource>
+    <qresource prefix="/doc">
+        <file>resources/docs/star_retrospect_traveler.pdf</file>
+        <file>resources/docs/star_retrospect_travelerStep.pdf</file>
+    </qresource>
 </RCC>

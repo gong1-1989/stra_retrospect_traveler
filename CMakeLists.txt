@@ -42,36 +42,22 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(star_retrospect_traveler
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        docs/config_resource_doc.html
-        docs/config_resource_doc.xml
-        docs/dev_guide_doc.html
-        docs/dev_guide_doc.xml
-        docs/game_design_doc.html
-        docs/game_design_doc.xml
-        docs/project_ops_doc.html
-        docs/project_ops_doc.xml
-        docs/tech_arch_doc.html
-        docs/tech_arch_doc.xml
-        docs/README.md
-        docs/star_retrospect_traveler.pdf
         resources.qrc
         gameloop.h gameloop.cpp
         basescene.h basescene.cpp
         scenemanager.h scenemanager.cpp
         resourcemanager.h resourcemanager.cpp
         inputmanager.h inputmanager.cpp
-        src/core/gameengine.h src/core/gameengine.cpp
-        docs/No1.pdf docs/No2.pdf docs/No3.pdf docs/No4.pdf
 
+        src/core/gameengine.h src/core/gameengine.cpp
         src/core/scenemanager.h src/core/scenemanager.cpp
         src/core/resourcemanager.h src/core/resourcemanager.cpp
         src/core/inputmanager.h src/core/inputmanager.cpp
-        src/core/audiomanager.h src/core/audiomanager.cpp
-
-
-
-
-
+        src/core/audiomanager.h src/core/audiomanager.cpp        
+        src/core/gameconfig.h src/core/gameconfig.cpp
+        src/core/savesystem.h src/core/savesystem.cpp
+        src/core/pluginmanager.h src/core/pluginmanager.cpp
+        src/core/eventmanager.h src/core/eventmanager.cpp
 
         src/game/player.h src/game/player.cpp
         src/game/enemy.h src/game/enemy.cpp
@@ -83,15 +69,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/game/aisystem.h src/game/aisystem.cpp
         src/game/inventorysystem.h src/game/inventorysystem.cpp
         src/game/questsystem.h src/game/questsystem.cpp
-        src/core/gameconfig.h src/core/gameconfig.cpp
-        src/core/savesystem.h src/core/savesystem.cpp
-        src/core/pluginmanager.h src/core/pluginmanager.cpp
-        src/core/eventmanager.h src/core/eventmanager.cpp
+
         src/render/rendermanager.h src/render/rendermanager.cpp
         src/render/camerasystem.h src/render/camerasystem.cpp
         src/render/particlesystem.h src/render/particlesystem.cpp
         src/render/spriteanimation.h src/render/spriteanimation.cpp
         src/render/tilemap.h src/render/tilemap.cpp
+
         src/ui/uimanager.h src/ui/uimanager.cpp
         src/ui/mainmenu.h src/ui/mainmenu.cpp src/ui/mainmenu.ui
         src/ui/settingsdialog.h src/ui/settingsdialog.cpp src/ui/settingsdialog.ui
