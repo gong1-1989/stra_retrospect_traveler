@@ -48,41 +48,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         scenemanager.h scenemanager.cpp
         resourcemanager.h resourcemanager.cpp
         inputmanager.h inputmanager.cpp
-
-        src/core/gameengine.h src/core/gameengine.cpp
-        src/core/scenemanager.h src/core/scenemanager.cpp
-        src/core/resourcemanager.h src/core/resourcemanager.cpp
-        src/core/inputmanager.h src/core/inputmanager.cpp
-        src/core/audiomanager.h src/core/audiomanager.cpp        
-        src/core/gameconfig.h src/core/gameconfig.cpp
-        src/core/savesystem.h src/core/savesystem.cpp
-        src/core/pluginmanager.h src/core/pluginmanager.cpp
-        src/core/eventmanager.h src/core/eventmanager.cpp
-
-        src/game/player.h src/game/player.cpp
-        src/game/enemy.h src/game/enemy.cpp
-        src/game/timesystem.h src/game/timesystem.cpp
-        src/game/resonancesystem.h src/game/resonancesystem.cpp
-        src/game/ecosystemsystem.h src/game/ecosystemsystem.cpp
-        src/game/combatsystem.h src/game/combatsystem.cpp
-        src/game/skillsystem.h src/game/skillsystem.cpp
-        src/game/aisystem.h src/game/aisystem.cpp
-        src/game/inventorysystem.h src/game/inventorysystem.cpp
-        src/game/questsystem.h src/game/questsystem.cpp
-
-        src/render/rendermanager.h src/render/rendermanager.cpp
-        src/render/camerasystem.h src/render/camerasystem.cpp
-        src/render/particlesystem.h src/render/particlesystem.cpp
-        src/render/spriteanimation.h src/render/spriteanimation.cpp
-        src/render/tilemap.h src/render/tilemap.cpp
-
-        src/ui/uimanager.h src/ui/uimanager.cpp
-        src/ui/mainmenu.h src/ui/mainmenu.cpp src/ui/mainmenu.ui
-        src/ui/settingsdialog.h src/ui/settingsdialog.cpp src/ui/settingsdialog.ui
-        src/ui/inventorypanel.h src/ui/inventorypanel.cpp src/ui/inventorypanel.ui
-        src/ui/dialogbox.h src/ui/dialogbox.cpp src/ui/dialogbox.ui
-        src/ui/talentpanel.h src/ui/talentpanel.cpp
-        src/ui/starmappanel.h src/ui/starmappanel.cpp
+        src/Utile/globaltool.cpp src/Utile/globaltool.h src/Utile/logtool.cpp src/Utile/logtool.h
+        loginwidget.h loginwidget.cpp loginwidget.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET star_retrospect_traveler APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -142,4 +109,3 @@ install(TARGETS star_retrospect_traveler
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(star_retrospect_traveler)
 endif()
-add_subdirectory(modules/CoreModule)
